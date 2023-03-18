@@ -7924,7 +7924,7 @@ function queryStringContains(s) {
 
 function isLocalhost() {
   // return getRootDomain() == "localhost";
-  return true:
+  return true;
 }
 
 function getSubDomain() {
