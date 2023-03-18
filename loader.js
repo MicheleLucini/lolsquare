@@ -2,7 +2,7 @@
 $(function () {
     $.ajax({
         dataType: "text",
-        url: window.location.origin + '/version.txt',
+        url: (window.location.href + '/version.txt').replace("//", "/"),
         cache: false,
         success: function (data) {
             // Bundle css - <link rel="stylesheet" href="https://static.lolsquare.com/lolsquare.css" />
