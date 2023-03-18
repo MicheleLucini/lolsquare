@@ -8598,7 +8598,7 @@ function signInWelcomeMessage(dtLastLogin) {
 function registrationWelcomeModal() {
   openModal('welcomeModal', getTemplateHtml(Modal_WelcomeItemTemplate), false);
 }
-var urlLoLSquareCDN = ""; // "https://static.lolsquare.com";
+var urlLoLSquareCDN = window.location.href.slice(0, -1); // "https://static.lolsquare.com";
 
 function cdnLink(sLink) {
   if (!isNullOrEmpty(sLink)) {
