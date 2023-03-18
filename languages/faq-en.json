@@ -1,0 +1,18 @@
+{
+    "1": {
+        "title": "I have a question, who do i ask?",
+        "html": "<div class=\"row\"><div class=\"col s12\"><p>Use the \"Send feedback\" menu section to ask us anything.<br />We will update the FAQ section with the most popular questions.</p></div></div>"
+    },
+    "2": {
+        "title": "How do i change password?",
+        "html": "<div class=\"row\"><div class=\"col s12\"><p>To change the password you simply have to log-out and register your summoner again with a new password.<br />All your information(Teams, games played, etc) will be kept safe and won't be lost.</p></div></div>"
+    },
+    "3": {
+        "title": "Report text",
+        "html": "<div class=\"row\"><div class=\"col s12\"><p>Texts flagged as inappropriate will be forwarded to our moderators. Once reviewed, if proven to break our guidelines and values, these texts will be blocked.</p></div></div>"
+    },
+    "4": {
+        "title": "How can I create a tournament?",
+        "html": "<div class=\"row\"><div class=\"col s12\"><p>To create a tournament simply contact us via one of the following social networks:</p><ul class=\"browser-default\"><li><a href=\"https://www.instagram.com/euwlolsquare\" target=\"_blank\" rel=\"noopener\">https://www.instagram.com/euwlolsquare</a></li><li><a href=\"https://www.facebook.com/Euwlolsquare\" target=\"_blank\" rel=\"noopener\">https://www.facebook.com/Euwlolsquare</a></li></ul></div></div>"
+    }
+}

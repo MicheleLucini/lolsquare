@@ -1,0 +1,698 @@
+{
+    "1021": {
+        "name": "Uno per Tutti",
+        "shortName": "Uno per Tutti",
+        "description": "Uno per Tutti",
+        "detailedDescription": ""
+    },
+    "1020": {
+        "name": "Uno per Tutti",
+        "shortName": "Uno per Tutti",
+        "description": "Uno per Tutti",
+        "detailedDescription": ""
+    },
+    "1022": {
+        "name": "Uno per Tutti",
+        "shortName": "Uno per Tutti",
+        "description": "Uno per Tutti",
+        "detailedDescription": ""
+    },
+    "1050": {
+        "name": "Odissea (Equipaggio)",
+        "shortName": "Odissea (Equipaggio)",
+        "description": "Membro dell'equipaggio",
+        "detailedDescription": "Odissea (Equipaggio)"
+    },
+    "14": {
+        "name": "Normale",
+        "shortName": "Normale",
+        "description": "Draft",
+        "detailedDescription": "Normale (Draft)"
+    },
+    "440": {
+        "name": "Classificata Flex",
+        "shortName": "Classificata Flex",
+        "description": "Classificata Flex",
+        "detailedDescription": ""
+    },
+    "441": {
+        "name": "Classificata Flex",
+        "shortName": "Classificata Flex",
+        "description": "Classificata Flex",
+        "detailedDescription": ""
+    },
+    "442": {
+        "name": "Classificata Flex",
+        "shortName": "Classificata Flex",
+        "description": "Classificata Flex",
+        "detailedDescription": ""
+    },
+    "422": {
+        "name": "Classificata Solo/Duo",
+        "shortName": "Classificata Solo/Duo",
+        "description": "Classificata Solo/Duo",
+        "detailedDescription": ""
+    },
+    "1102": {
+        "name": "2v0 (Classificata)",
+        "shortName": "2v0 (Classificata)",
+        "description": "2v0 (Classificata)",
+        "detailedDescription": ""
+    },
+    "31": {
+        "name": "Introduzione",
+        "shortName": "Introduzione",
+        "description": "Introduzione",
+        "detailedDescription": ""
+    },
+    "452": {
+        "name": "ARAM",
+        "shortName": "ARAM",
+        "description": "ARAM",
+        "detailedDescription": ""
+    },
+    "420": {
+        "name": "Classificata Solo/Duo",
+        "shortName": "Classificata Solo/Duo",
+        "description": "Classificata Solo/Duo",
+        "detailedDescription": ""
+    },
+    "451": {
+        "name": "ARAM",
+        "shortName": "ARAM",
+        "description": "ARAM",
+        "detailedDescription": ""
+    },
+    "1100": {
+        "name": "Teamfight Tactics (Classificata)",
+        "shortName": "Teamfight Tactics (Classificata)",
+        "description": "Classificata",
+        "detailedDescription": "Teamfight Tactics (Classificata)"
+    },
+    "33": {
+        "name": "Intermedio",
+        "shortName": "Intermedio",
+        "description": "Intermedio",
+        "detailedDescription": ""
+    },
+    "421": {
+        "name": "Classificata Solo/Duo",
+        "shortName": "Classificata Solo/Duo",
+        "description": "Classificata Solo/Duo",
+        "detailedDescription": ""
+    },
+    "450": {
+        "name": "ARAM",
+        "shortName": "ARAM",
+        "description": "ARAM",
+        "detailedDescription": ""
+    },
+    "1101": {
+        "name": "1v0 (Classificata)",
+        "shortName": "1v0 (Classificata)",
+        "description": "1v0 (Classificata)",
+        "detailedDescription": ""
+    },
+    "32": {
+        "name": "Principiante",
+        "shortName": "Principiante",
+        "description": "Principiante",
+        "detailedDescription": ""
+    },
+    "92": {
+        "name": "Sfida di livello 100",
+        "shortName": "Sfida di livello 100",
+        "description": "Sfida di livello 100",
+        "detailedDescription": ""
+    },
+    "35": {
+        "name": "Principiante",
+        "shortName": "Principiante",
+        "description": "Principiante",
+        "detailedDescription": ""
+    },
+    "91": {
+        "name": "Il Teemonomicon",
+        "shortName": "Il Teemonomicon",
+        "description": "Il Teemonomicon",
+        "detailedDescription": ""
+    },
+    "34": {
+        "name": "Introduzione",
+        "shortName": "Introduzione",
+        "description": "Introduzione",
+        "detailedDescription": ""
+    },
+    "90": {
+        "name": "Il Teemonomicon",
+        "shortName": "Il Teemonomicon",
+        "description": "Il Teemonomicon",
+        "detailedDescription": ""
+    },
+    "431": {
+        "name": "Normale",
+        "shortName": "Normale",
+        "description": "Selezione segreta",
+        "detailedDescription": ""
+    },
+    "97": {
+        "name": "Ascensione",
+        "shortName": "Ascensione",
+        "description": "Ascensione",
+        "detailedDescription": ""
+    },
+    "36": {
+        "name": "Intermedio",
+        "shortName": "Intermedio",
+        "description": "Intermedio",
+        "detailedDescription": ""
+    },
+    "430": {
+        "name": "Normale",
+        "shortName": "Normale",
+        "description": "Selezione segreta",
+        "detailedDescription": "Normale (Selezione segreta)"
+    },
+    "96": {
+        "name": "Ascensione",
+        "shortName": "Ascensione",
+        "description": "Ascensione",
+        "detailedDescription": ""
+    },
+    "1030": {
+        "name": "Odissea (Intro)",
+        "shortName": "Odissea (Intro)",
+        "description": "Introduzione",
+        "detailedDescription": "Odissea (Intro)"
+    },
+    "41": {
+        "name": "La squadra",
+        "shortName": "La squadra",
+        "description": "La squadra",
+        "detailedDescription": ""
+    },
+    "433": {
+        "name": "Normale",
+        "shortName": "Normale",
+        "description": "Selezione segreta",
+        "detailedDescription": "Normale (Selezione segreta)"
+    },
+    "318": {
+        "name": "Fuoco ultra rapido",
+        "shortName": "URF",
+        "description": "Fuoco ultra rapido",
+        "detailedDescription": ""
+    },
+    "2020": {
+        "name": "Tutorial parte 3",
+        "shortName": "Tutorial parte 3",
+        "description": "Tutorial parte 3",
+        "detailedDescription": ""
+    },
+    "460": {
+        "name": "Normale",
+        "shortName": "Normale",
+        "description": "Selezione segreta",
+        "detailedDescription": "Normale (Selezione segreta)"
+    },
+    "42": {
+        "name": "La squadra",
+        "shortName": "La squadra",
+        "description": "La squadra",
+        "detailedDescription": ""
+    },
+    "432": {
+        "name": "Normale",
+        "shortName": "Normale",
+        "description": "Selezione segreta",
+        "detailedDescription": ""
+    },
+    "319": {
+        "name": "Fuoco ultra rapido",
+        "shortName": "URF",
+        "description": "Fuoco ultra rapido",
+        "detailedDescription": ""
+    },
+    "901": {
+        "name": "Fuoco ultra rapido",
+        "shortName": "URF",
+        "description": "Fuoco ultra rapido",
+        "detailedDescription": ""
+    },
+    "900": {
+        "name": "Fuoco ultra rapido",
+        "shortName": "URF",
+        "description": "Fuoco ultra rapido",
+        "detailedDescription": ""
+    },
+    "314": {
+        "name": "Assedio al nexus",
+        "shortName": "Assedio al nexus",
+        "description": "Assedio al nexus",
+        "detailedDescription": ""
+    },
+    "315": {
+        "name": "Assedio al nexus",
+        "shortName": "Assedio al nexus",
+        "description": "Assedio al nexus",
+        "detailedDescription": ""
+    },
+    "301": {
+        "name": "Leggenda del Re dei Poro",
+        "shortName": "Re dei Poro",
+        "description": "Re dei Poro",
+        "detailedDescription": ""
+    },
+    "316": {
+        "name": "Sicuramente non Dominion",
+        "shortName": "Sicuramente non Dominion",
+        "description": "Sicuramente non Dominion",
+        "detailedDescription": ""
+    },
+    "300": {
+        "name": "Leggenda del Re dei Poro",
+        "shortName": "Re dei Poro",
+        "description": "Re dei Poro",
+        "detailedDescription": ""
+    },
+    "317": {
+        "name": "Sicuramente non Dominion",
+        "shortName": "Sicuramente non Dominion",
+        "description": "Sicuramente non Dominion",
+        "detailedDescription": ""
+    },
+    "990": {
+        "name": "Invasione (Massacro)",
+        "shortName": "Invasione (Massacro)",
+        "description": "Massacro",
+        "detailedDescription": "Invasione (Massacro)"
+    },
+    "981": {
+        "name": "Invasione (Normale)",
+        "shortName": "Invasione (Normale)",
+        "description": "Normale",
+        "detailedDescription": "Invasione (Normale)"
+    },
+    "980": {
+        "name": "Invasione (Normale)",
+        "shortName": "Invasione (Normale)",
+        "description": "Normale",
+        "detailedDescription": "Invasione (Normale)"
+    },
+    "982": {
+        "name": "Invasione (Normale)",
+        "shortName": "Invasione (Normale)",
+        "description": "Normale",
+        "detailedDescription": "Invasione (Normale)"
+    },
+    "921": {
+        "name": "Leggenda del Re dei Poro",
+        "shortName": "Re dei Poro",
+        "description": "Re dei Poro",
+        "detailedDescription": ""
+    },
+    "830": {
+        "name": "Introduzione",
+        "shortName": "Introduzione",
+        "description": "Introduzione",
+        "detailedDescription": ""
+    },
+    "920": {
+        "name": "Leggenda del Re dei Poro",
+        "shortName": "Re dei Poro",
+        "description": "Re dei Poro",
+        "detailedDescription": ""
+    },
+    "840": {
+        "name": "Principiante",
+        "shortName": "Principiante",
+        "description": "Principiante",
+        "detailedDescription": ""
+    },
+    "910": {
+        "name": "Ascensione",
+        "shortName": "Ascensione",
+        "description": "Ascensione",
+        "detailedDescription": ""
+    },
+    "911": {
+        "name": "Ascensione",
+        "shortName": "Ascensione",
+        "description": "Ascensione",
+        "detailedDescription": ""
+    },
+    "100": {
+        "name": "Normale",
+        "shortName": "Normale",
+        "description": "Selezione segreta",
+        "detailedDescription": "Normale (Selezione segreta)"
+    },
+    "820": {
+        "name": "Principiante",
+        "shortName": "Principiante",
+        "description": "Principiante",
+        "detailedDescription": ""
+    },
+    "701": {
+        "name": "Clash",
+        "shortName": "Clash",
+        "description": "Clash",
+        "detailedDescription": ""
+    },
+    "700": {
+        "name": "Clash",
+        "shortName": "Clash",
+        "description": "Clash",
+        "detailedDescription": ""
+    },
+    "1090": {
+        "name": "Teamfight Tactics (Normale)",
+        "shortName": "Teamfight Tactics (Normale)",
+        "description": "Normale",
+        "detailedDescription": "Teamfight Tactics (Normale)"
+    },
+    "1091": {
+        "name": "1vs0",
+        "shortName": "1vs0",
+        "description": "1vs0",
+        "detailedDescription": ""
+    },
+    "1092": {
+        "name": "2vs0",
+        "shortName": "2vs0",
+        "description": "2vs0",
+        "detailedDescription": ""
+    },
+    "470": {
+        "name": "Classificata Flex",
+        "shortName": "Classificata Flex",
+        "description": "Classificata Flex",
+        "detailedDescription": ""
+    },
+    "62": {
+        "name": "ARAM",
+        "shortName": "ARAM",
+        "description": "ARAM",
+        "detailedDescription": ""
+    },
+    "63": {
+        "name": "ARAM",
+        "shortName": "ARAM",
+        "description": "ARAM",
+        "detailedDescription": ""
+    },
+    "400": {
+        "name": "Normale",
+        "shortName": "Normale",
+        "description": "Draft",
+        "detailedDescription": "Normale (Draft)"
+    },
+    "401": {
+        "name": "Normale",
+        "shortName": "Normale",
+        "description": "Draft",
+        "detailedDescription": "Normale (Draft)"
+    },
+    "402": {
+        "name": "Normale",
+        "shortName": "Normale",
+        "description": "Draft",
+        "detailedDescription": "Normale (Draft)"
+    },
+    "64": {
+        "name": "ARAM",
+        "shortName": "ARAM",
+        "description": "ARAM",
+        "detailedDescription": ""
+    },
+    "403": {
+        "name": "Normale",
+        "shortName": "Normale",
+        "description": "Draft",
+        "detailedDescription": "Normale (Draft)"
+    },
+    "413": {
+        "name": "Classificata",
+        "shortName": "Classificata",
+        "description": "Classificata draft",
+        "detailedDescription": ""
+    },
+    "65": {
+        "name": "ARAM",
+        "shortName": "ARAM",
+        "description": "ARAM",
+        "detailedDescription": ""
+    },
+    "412": {
+        "name": "Classificata",
+        "shortName": "Classificata",
+        "description": "Classificata draft",
+        "detailedDescription": ""
+    },
+    "1040": {
+        "name": "Odissea (Cadetto)",
+        "shortName": "Odissea (Cadetto)",
+        "description": "Cadetto",
+        "detailedDescription": "Odissea (Cadetto)"
+    },
+    "411": {
+        "name": "Classificata",
+        "shortName": "Classificata",
+        "description": "Classificata draft",
+        "detailedDescription": ""
+    },
+    "0": {
+        "name": "Personalizzata",
+        "shortName": "Personalizzata",
+        "description": "Personalizzata",
+        "detailedDescription": ""
+    },
+    "410": {
+        "name": "Classificata",
+        "shortName": "Classificata",
+        "description": "Classificata draft",
+        "detailedDescription": ""
+    },
+    "1": {
+        "name": "Normale",
+        "shortName": "Normale",
+        "description": "Selezione segreta",
+        "detailedDescription": "Normale (Selezione segreta)"
+    },
+    "1010": {
+        "name": "ARURF sulla neve",
+        "shortName": "ARURF sulla neve",
+        "description": "ARURF sulla neve",
+        "detailedDescription": ""
+    },
+    "2": {
+        "name": "Normale",
+        "shortName": "Normale",
+        "description": "Selezione segreta",
+        "detailedDescription": "Normale (Selezione segreta)"
+    },
+    "1011": {
+        "name": "ARURF sulla neve",
+        "shortName": "ARURF sulla neve",
+        "description": "ARURF sulla neve",
+        "detailedDescription": ""
+    },
+    "1070": {
+        "name": "Odissea (Massacro)",
+        "shortName": "Odissea (Massacro)",
+        "description": "Massacro",
+        "detailedDescription": "Odissea (Massacro)"
+    },
+    "1001": {
+        "name": "Sovraccarico",
+        "shortName": "Sovraccarico",
+        "description": "Sovraccarico",
+        "detailedDescription": ""
+    },
+    "321": {
+        "name": "Luna di Sangue",
+        "shortName": "Luna di Sangue",
+        "description": "Luna di Sangue",
+        "detailedDescription": ""
+    },
+    "1000": {
+        "name": "Sovraccarico",
+        "shortName": "Sovraccarico",
+        "description": "Sovraccarico",
+        "detailedDescription": ""
+    },
+    "320": {
+        "name": "Luna di Sangue",
+        "shortName": "Luna di Sangue",
+        "description": "Luna di Sangue",
+        "detailedDescription": ""
+    },
+    "8": {
+        "name": "Normale",
+        "shortName": "Normale",
+        "description": "Selezione segreta",
+        "detailedDescription": "Normale (Selezione segreta)"
+    },
+    "9": {
+        "name": "Classificata Flex",
+        "shortName": "Classificata Flex",
+        "description": "Classificata Flex",
+        "detailedDescription": ""
+    },
+    "325": {
+        "name": "ARSR",
+        "shortName": "ARSR",
+        "description": "ARSR",
+        "detailedDescription": ""
+    },
+    "1060": {
+        "name": "Odissea (Capitano)",
+        "shortName": "Odissea (Capitano)",
+        "description": "Capitano",
+        "detailedDescription": "Odissea (Capitano)"
+    },
+    "324": {
+        "name": "ARSR",
+        "shortName": "ARSR",
+        "description": "ARSR",
+        "detailedDescription": ""
+    },
+    "1110": {
+        "name": "Teamfight Tactics (Tutorial)",
+        "shortName": "Teamfight Tactics (Tutorial)",
+        "description": "Tutorial",
+        "detailedDescription": ""
+    },
+    "52": {
+        "name": "Principiante",
+        "shortName": "Principiante",
+        "description": "Principiante",
+        "detailedDescription": ""
+    },
+    "2000": {
+        "name": "Tutorial parte 1",
+        "shortName": "Tutorial parte 1",
+        "description": "Tutorial parte 1",
+        "detailedDescription": ""
+    },
+    "970": {
+        "name": "Hexakill",
+        "shortName": "Hexakill",
+        "description": "Hexakill",
+        "detailedDescription": ""
+    },
+    "2010": {
+        "name": "Tutorial parte 2",
+        "shortName": "Tutorial parte 2",
+        "description": "Tutorial parte 2",
+        "detailedDescription": ""
+    },
+    "961": {
+        "name": "Il Teemonomicon",
+        "shortName": "Il Teemonomicon",
+        "description": "Il Teemonomicon",
+        "detailedDescription": ""
+    },
+    "960": {
+        "name": "Il Teemonomicon",
+        "shortName": "Il Teemonomicon",
+        "description": "Il Teemonomicon",
+        "detailedDescription": ""
+    },
+    "930": {
+        "name": "ARAM",
+        "shortName": "ARAM",
+        "description": "ARAM",
+        "detailedDescription": ""
+    },
+    "931": {
+        "name": "ARAM",
+        "shortName": "ARAM",
+        "description": "ARAM",
+        "detailedDescription": ""
+    },
+    "950": {
+        "name": "Sfida di livello 100",
+        "shortName": "Sfida di livello 100",
+        "description": "Sfida di livello 100",
+        "detailedDescription": ""
+    },
+    "1201": {
+        "name": "1v1",
+        "shortName": "1v1",
+        "description": "1v1",
+        "detailedDescription": "1v1"
+    },
+    "951": {
+        "name": "Sfida di livello 100",
+        "shortName": "Sfida di livello 100",
+        "description": "Sfida di livello 100",
+        "detailedDescription": ""
+    },
+    "1200": {
+        "name": "Blitz al nexus",
+        "shortName": "Blitz al nexus",
+        "description": "Selezione segreta",
+        "detailedDescription": ""
+    },
+    "941": {
+        "name": "Assedio al nexus",
+        "shortName": "Assedio al nexus",
+        "description": "Assedio al nexus",
+        "detailedDescription": ""
+    },
+    "940": {
+        "name": "Assedio al nexus",
+        "shortName": "Assedio al nexus",
+        "description": "Assedio al nexus",
+        "detailedDescription": ""
+    },
+    "850": {
+        "name": "Intermedio",
+        "shortName": "Intermedio",
+        "description": "Intermedio",
+        "detailedDescription": ""
+    },
+    "800": {
+        "name": "Intermedio",
+        "shortName": "Intermedio",
+        "description": "Intermedio",
+        "detailedDescription": ""
+    },
+    "801": {
+        "name": "Co-op vs. IA",
+        "shortName": "Co-op vs. IA",
+        "description": "Co-op vs. IA",
+        "detailedDescription": ""
+    },
+    "810": {
+        "name": "Introduzione",
+        "shortName": "Introduzione",
+        "description": "Introduzione",
+        "detailedDescription": ""
+    },
+    "600": {
+        "name": "Luna di Sangue",
+        "shortName": "Luna di Sangue",
+        "description": "Luna di Sangue",
+        "detailedDescription": ""
+    },
+    "601": {
+        "name": "Luna di Sangue",
+        "shortName": "Luna di Sangue",
+        "description": "Luna di Sangue",
+        "detailedDescription": ""
+    },
+    "611": {
+        "name": "Stella Oscura: Singolarità",
+        "shortName": "Stella Oscura",
+        "description": "Stella Oscura: Singolarità",
+        "detailedDescription": ""
+    },
+    "610": {
+        "name": "Stella Oscura: Singolarità",
+        "shortName": "Stella Oscura",
+        "description": "Stella Oscura: Singolarità",
+        "detailedDescription": ""
+    }
+}

@@ -1,0 +1,1821 @@
+﻿<!--
+  _        _    ___
+ | |   ___| |  / __| __ _ _  _ __ _ _ _ ___
+ | |__/ _ \ |__\__ \/ _` | || / _` | '_/ -_)
+ |____\___/____|___/\__, |\_,_\__,_|_| \___|
+                       |_|
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>LoLSquare - LoL Team Manager</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700|Montserrat:100,300,400,500,700">
+    <script defer="defer" src="https://kit.fontawesome.com/0b1d4eba83.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <meta name="application-name" content="LoLSquare">
+    <meta name="apple-mobile-web-app-title" content="LoLSquare">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#009688" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="League of Legends team manager" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.86, minimum-scale=0.6, maximum-scale=1.0" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-config" content="https://static.lolsquare.com/images/logo/browserconfig.xml">
+
+    <link rel="shortcut icon" href="https://static.lolsquare.com/images/logo/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://static.lolsquare.com/images/logo/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="https://static.lolsquare.com/images/logo/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://static.lolsquare.com/images/logo/apple-touch-icon.png" />
+    <link rel="mask-icon" href="https://static.lolsquare.com/images/logo/safari-pinned-tab.svg" color="#009688" />
+
+    <link rel="canonical" href="https://static.lolsquare.com/LandingPage.html" />
+    <meta property="og:url" content="https://static.lolsquare.com/LandingPage.html">
+
+    <meta property="og:site_name" content="LoLSquare.com">
+    <meta property="og:title" content="LoLSquare - LoL Team Manager">
+    <meta property="og:description" content="League of Legends team manager">
+    <meta property="og:type" content="website">
+
+    <meta property="og:image" content="https://static.lolsquare.com/images/logo/logo-og-1200x1200.png">
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    <meta property="og:image:alt" content="LoLSquare logo" />
+
+    <meta property="og:image" content="https://static.lolsquare.com/images/logo/logo-og-200x200.png">
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    <meta property="og:image:alt" content="LoLSquare logo" />
+
+    <style type="text/css">
+        * {
+            font-family: Montserrat;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 10vh;
+            width: 100vw;
+            display: grid;
+            grid-gap: 12px;
+            grid-template-rows: 1fr;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            padding: 0 8vh;
+            z-index: 99;
+        }
+
+            .header img {
+                height: 40px;
+                width: 40px;
+            }
+
+            .header .ls-link {
+                font-size: 2rem;
+                font-weight: bold;
+                width: -moz-fit-content;
+                width: fit-content;
+                background: linear-gradient(to right, #00796b 0%, #1de9b6 50%, #00796b 100%);
+                background-size: 200% auto;
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-fill-color: transparent;
+                animation: shine 4s linear infinite;
+                transition: background 0.4s;
+                cursor: pointer;
+            }
+
+                .header .ls-link:hover {
+                    background: linear-gradient(to right, #ff6d00 0%, #ffab40 50%, #ff6d00 100%);
+                    background-size: 200% auto;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    text-fill-color: transparent;
+                }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .header .btn-large {
+            background-color: transparent;
+            color: #999;
+        }
+
+            .header .btn-large:hover {
+                background-color: #ff9100;
+                color: #fff;
+            }
+
+        #brand-name span {
+            opacity: 0;
+            transform: translateY(-20px);
+            will-change: transform, opacity;
+            animation: brand-name-appear 2s 0s 1 cubic-bezier(0, 0, 0.2, 1) forwards !important;
+            display: inline-block;
+            text-align: center;
+        }
+
+        @keyframes brand-name-appear {
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #brand-desc {
+            opacity: 0;
+            transform: translateY(-20px);
+            will-change: transform, opacity;
+            animation: brand-name-appear 1.5s 1.3s 1 cubic-bezier(0, 0, 0.2, 1) forwards !important;
+        }
+
+
+
+        /* Medium and down */
+        @media only screen and (max-width: 992px) {
+            h1, p {
+                text-align: center;
+            }
+
+            .app {
+                padding: 10vh 3vw;
+                width: 100%;
+                display: grid;
+                grid-gap: 10vw 0;
+                grid-auto-flow: row;
+                grid-template-rows: max-content;
+                grid-auto-columns: 1fr;
+            }
+
+                .app > div {
+                    display: grid;
+                    align-items: center;
+                }
+
+                    .app > div > div > p {
+                        font-size: 20px;
+                    }
+
+            .logo {
+                margin: 10vh auto 0;
+                width: 30vw;
+                will-change: transform;
+                transform: rotate(0deg) scale(1, 1);
+                /*transform: rotate(-45deg) scale(3, 3);*/
+                transition: transform 0.8s;
+                transition-timing-function: ease;
+            }
+
+            #pageLogoLarge {
+                display: none;
+            }
+
+            #pageHome {
+                min-height: 30vh;
+                margin-bottom: 20vh;
+            }
+
+            #imgSocial {
+                width: 100%;
+                margin-left: -5vw;
+            }
+
+            #rowTeamCard {
+                display: none;
+            }
+
+            .tm #Home .col.s8 {
+                display: none;
+            }
+
+            .tm #Home .col.s4 {
+                width: 100%;
+            }
+
+            .rowranks {
+                display: none;
+            }
+
+            .hero {
+                display: none;
+            }
+
+            .header {
+                padding: 0 2vh;
+            }
+
+                .header .ls-link {
+                    font-size: 1.5rem;
+                }
+
+                .header .fill {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    height: 10vh;
+                    width: 100vw;
+                    z-index: -1;
+                    background: #fff;
+                    border-bottom: 1px #fafafa solid;
+                    background: rgba(255,255,255,.85);
+                    -webkit-backdrop-filter: blur(8px);
+                    backdrop-filter: blur(8px);
+                }
+
+            .scrollbar {
+                display: none;
+            }
+        }
+
+        /* Large and up */
+        @media only screen and (min-width: 993px) {
+            h1 {
+                font-size: 4vw;
+            }
+
+            p {
+                font-size: 1.6vw;
+            }
+
+            .app {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                padding: 0 8vw;
+                display: grid;
+                grid-gap: 0 10vw;
+                grid-auto-flow: column;
+                grid-template-rows: minmax(0,1fr);
+                grid-auto-columns: max-content;
+                will-change: transform;
+                transition: transform 1.5s;
+                transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+            }
+
+                .app > div {
+                    display: grid;
+                    align-items: center;
+                }
+
+            .logo {
+                margin: 0 8vw;
+                width: 20vw;
+                will-change: transform;
+                transform: rotate(0deg) scale(1, 1);
+                /*transform: rotate(-45deg) scale(3, 3);*/
+                transition: transform 0.8s;
+                transition-timing-function: ease;
+            }
+
+            #pageLogoSmall {
+                display: none;
+            }
+
+            #pageHome {
+                width: 40vw;
+            }
+
+            #brand-desc {
+                height: 90px;
+            }
+
+            #pageTeamPreview {
+                width: 1000px;
+            }
+
+            #imgSocial {
+                height: 80vh;
+                margin-left: -10vw;
+            }
+
+            #pageProfilePreview {
+                width: 900px;
+            }
+
+            .hero {
+                -webkit-mask-image: url(https://static.lolsquare.com/images/landing-page/hero-mask-circluar.png);
+                mask-image: url(https://static.lolsquare.com/images/landing-page/hero-mask-circluar.png);
+                -webkit-mask-repeat: no-repeat;
+                mask-repeat: no-repeat;
+                -webkit-mask-size: 0;
+                mask-size: 0;
+                opacity: 0;
+                width: 40vw;
+                transition: -webkit-mask-size 1.25s ease-out .5s, mask-size 1.25s ease-out .5s, -webkit-mask-position 1.25s ease-out .5s, mask-position 1.25s ease-out .5s,opacity .4s linear .5s;
+                -webkit-mask-position: 50% 50%;
+                mask-position: 50% 50%;
+                z-index: -1;
+            }
+
+                .hero.appear {
+                    opacity: 1;
+                    -webkit-mask-size: 180%;
+                    mask-size: 180%;
+                }
+
+                .hero.jinx {
+                    margin-right: -9vw;
+                }
+
+                .hero.yasuo {
+                    margin-left: -15vw;
+                    margin-top: -8vh;
+                }
+
+            .header .fill {
+                display: none;
+            }
+
+            .scrollbar {
+                position: fixed;
+                bottom: 0;
+                left: 20vw;
+                height: 10vh;
+                width: 60vw;
+                display: grid;
+                grid-template-rows: 1fr;
+                grid-template-columns: 1fr;
+                align-items: center;
+            }
+
+                .scrollbar .progress {
+                    height: 2px;
+                }
+
+                .scrollbar .determinate {
+                    transition: width 0.8s ease-out 0s;
+                }
+
+                .scrollbar .point-navigate {
+					position: absolute;
+					margin-top: -38px;
+					color: #424242;
+					padding: 0 6px;
+					cursor: pointer;
+					height: 22px;
+					line-height: 22px;
+					font-size: 0.9rem;
+					font-weight: 500;
+					letter-spacing: 0.05rem;
+				}
+
+                    .scrollbar .point-navigate:before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        background-color: #ffd180;
+                        height: 6px;
+                        width: 6px;
+                        margin-top: 23px;
+                        margin-left: -6px;
+                        z-index: 1;
+						border-radius: 2px;
+						transition: background-color 1s;
+						transform: rotate(45deg);
+                    }
+
+                    .scrollbar .point-navigate.on:before {
+                        background-color: #ff9800;
+                    }
+        }
+
+
+
+        #rowTeamCard {
+            margin-bottom: 2rem
+        }
+
+        .tm .team-card {
+            background: linear-gradient(141deg,#e0e0e0 0,#eee 51%,#f5f5f5 75%);
+            box-shadow: none;
+            margin-bottom: 20px;
+            border: none
+        }
+
+            .tm .team-card:before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: inherit;
+                background-color: inherit;
+                -webkit-filter: blur(5px);
+                filter: blur(5px);
+                z-index: -1;
+                margin-top: 2px;
+                background: inherit
+            }
+
+            .tm .team-card .flagimg {
+                border: 3px solid #000;
+                border-radius: 3px;
+                margin: 8px 10px 0 0;
+                height: 24px;
+                float: left
+            }
+
+            .tm .team-card.white-text .flagimg {
+                border-color: #fff
+            }
+
+            .tm .team-card .teamlogo {
+                width: 120px;
+                float: left;
+                margin-top: 12px
+            }
+
+            .tm .team-card span.name {
+                border-radius: 8px;
+                padding: 0 8px;
+                margin: 5px 0;
+                line-height: 40px;
+                font-size: 32px;
+                font-weight: 500
+            }
+
+            .tm .team-card span.badge {
+                margin: 4px 8px 8px
+            }
+
+            .tm .team-card span.tag {
+                margin-top: 15px;
+                font-weight: 700
+            }
+
+            .tm .team-card span.badge {
+                background-color: transparent;
+                color: inherit;
+                cursor: pointer;
+                border: 1px solid rgba(0,0,0,.1)
+            }
+
+                .tm .team-card span.badge.active {
+                    background-color: #009688;
+                    color: #fff
+                }
+
+            .tm .team-card .btn-floating {
+                position: absolute;
+                top: 8px;
+                right: 8px
+            }
+
+                .tm .team-card .btn-floating:not(:hover) {
+                    box-shadow: none
+                }
+
+            .tm .team-card .rowtabs {
+                background: rgba(255,255,255,.1)
+            }
+
+            .tm .team-card .tabs .tab a {
+                color: #000 !important
+            }
+
+            .tm .team-card.white-text .tabs .tab a {
+                color: #fff !important
+            }
+
+        .teamcard {
+            overflow: hidden;
+            height: 351px
+        }
+
+            .teamcard:not(.compact) .card-content {
+                min-height: 235px
+            }
+
+            .teamcard .card-content > div {
+                width: 100%;
+                display: inline-block
+            }
+
+            .teamcard.compact .card-content > div {
+                width: 50%
+            }
+
+            .teamcard .card-content .flagimg {
+                height: 28px;
+                z-index: 1;
+                border-radius: 3px;
+                border: 3px solid #fff;
+                background: #fff
+            }
+
+            .teamcard.compact .card-content .flagimg {
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 24px
+            }
+
+            .teamcard .card-content .iconimg {
+                height: 200px;
+                margin-top: 20px;
+                z-index: 2
+            }
+
+            .teamcard.compact .card-content .iconimg {
+                margin-top: -4px;
+                height: 80px
+            }
+
+            .teamcard .card-content .halfway-fab {
+                position: absolute;
+                bottom: 16px;
+                right: 16px;
+                z-index: 2
+            }
+
+            .teamcard.compact .card-content .halfway-fab {
+                display: none
+            }
+
+        .tm .card-recap .card-content {
+            padding: 20px;
+            display: grid;
+            grid-gap: 24px 12px;
+            grid-template-columns: minmax(max-content,3fr) min-content minmax(0,5fr)
+        }
+
+            .tm .card-recap .card-content .vertical-divider {
+                width: 1px;
+                height: 100%;
+                background-color: #ccc
+            }
+
+            .tm .card-recap .card-content > .divider {
+                grid-column: span 3;
+                background-color: #ccc
+            }
+
+            .tm .card-recap .card-content .rank {
+                display: grid;
+                grid-gap: 4px 20px;
+                grid-template-columns: auto 1fr
+            }
+
+                .tm .card-recap .card-content .rank img {
+                    width: 100px;
+                    grid-column: 1;
+                    grid-row: 1/5;
+                    margin: auto
+                }
+
+                .tm .card-recap .card-content .rank :not(img) {
+                    grid-column: 2;
+                    line-height: 1rem;
+                    font-size: 1rem
+                }
+
+                .tm .card-recap .card-content .rank > span:first-of-type {
+                    font-size: 2rem;
+                    line-height: 2rem;
+                    font-weight: 700
+                }
+
+            .tm .card-recap .card-content .level {
+                display: grid;
+                grid-gap: 4px 20px
+            }
+
+                .tm .card-recap .card-content .level > span:nth-child(1) {
+                    font-size: 2rem;
+                    line-height: 2.5rem;
+                    font-weight: 700
+                }
+
+                .tm .card-recap .card-content .level > span:nth-child(2) {
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                    font-weight: 500
+                }
+
+            .tm .card-recap .card-content .champions {
+                display: grid;
+                grid-gap: 8px;
+                grid-template-columns: repeat(5,minmax(0,1fr))
+            }
+
+                .tm .card-recap .card-content .champions label {
+                    grid-column: span 5;
+                    margin-top: -12px
+                }
+
+                .tm .card-recap .card-content .champions > div {
+                    display: grid;
+                    grid-gap: 4px 10px;
+                    grid-auto-rows: min-content;
+                    align-items: center;
+                    text-align: center
+                }
+
+                    .tm .card-recap .card-content .champions > div img {
+                        height: 36px;
+                        width: 36px;
+                        margin: auto;
+                        border-radius: 4px
+                    }
+
+                        .tm .card-recap .card-content .champions > div img:nth-child(2) {
+                            height: 20px;
+                            width: 20px;
+                            margin: 26px 0 0 -10px;
+                            background-color: #f5f5f5;
+                            border-radius: 4px;
+                            border: 1px solid #ccc;
+                            position: absolute
+                        }
+
+                    .tm .card-recap .card-content .champions > div span {
+                        font-size: 13px
+                    }
+
+                        .tm .card-recap .card-content .champions > div span:nth-child(2) {
+                            font-weight: 500
+                        }
+
+            .tm .card-recap .card-content .players {
+                grid-column: span 3;
+                display: grid;
+                grid-gap: 12px
+            }
+
+                .tm .card-recap .card-content .players .title-divider {
+                    display: grid;
+                    grid-gap: 12px;
+                    grid-template-columns: 1fr auto 1fr;
+                    align-items: center
+                }
+
+                    .tm .card-recap .card-content .players .title-divider .divider {
+                        background-color: #ccc
+                    }
+
+            .tm .card-recap .card-content .player {
+                display: grid;
+                grid-gap: 16px;
+                grid-template-columns: auto auto 2fr auto 1fr 1fr 1fr 1fr;
+                align-items: center
+            }
+
+                .tm .card-recap .card-content .player .icon {
+                    border-radius: 50%;
+                    height: 36px;
+                    width: 36px
+                }
+
+                .tm .card-recap .card-content .player .flag {
+                    border-radius: 4px;
+                    width: 20px;
+                    height: 16px;
+                    border: 2px solid #fff;
+                    position: absolute;
+                    margin: 24px 0 0 24px;
+                    margin-left: 76px
+                }
+
+                .tm .card-recap .card-content .player .role {
+                    height: 36px;
+                    width: 36px;
+                    background-color: #f5f5f5;
+                    border-radius: 50%;
+                    border: 1px solid #ccc;
+                    padding: 4px
+                }
+
+                .tm .card-recap .card-content .player .rank {
+                    height: 36px
+                }
+
+                .tm .card-recap .card-content .player .stats {
+                    text-align: center;
+                    font-size: .9rem
+                }
+
+        #rowSummInfo {
+            margin-bottom: 2rem
+        }
+
+        .smmnr .card-rank .card-content {
+            padding: 20px;
+            display: grid;
+            grid-gap: 0 24px;
+            grid-template-columns: minmax(max-content,3fr) minmax(0,5fr)
+        }
+
+            .smmnr .card-rank .card-content .rank {
+                display: grid;
+                grid-gap: 4px 20px;
+                grid-template-columns: auto 1fr
+            }
+
+                .smmnr .card-rank .card-content .rank img {
+                    width: 100px;
+                    grid-column: 1;
+                    grid-row: 1/6;
+                    margin: auto
+                }
+
+                .smmnr .card-rank .card-content .rank :not(img) {
+                    grid-column: 2;
+                    line-height: 16px;
+                    font-size: .9rem
+                }
+
+                .smmnr .card-rank .card-content .rank > span:first-of-type {
+                    font-size: 20px;
+                    line-height: 24px;
+                    font-weight: 700
+                }
+
+                .smmnr .card-rank .card-content .rank > span:nth-child(3) {
+                    font-size: 18px;
+                    line-height: 20px;
+                    font-weight: 500
+                }
+
+            .smmnr .card-rank .card-content .level {
+                display: grid;
+                grid-gap: 4px 20px
+            }
+
+                .smmnr .card-rank .card-content .level > span:nth-child(1) {
+                    font-size: 2rem;
+                    line-height: 2.5rem;
+                    font-weight: 700
+                }
+
+                .smmnr .card-rank .card-content .level > span:nth-child(2) {
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                    font-weight: 500
+                }
+
+            .smmnr .card-rank .card-content .champions {
+                grid-column: 2;
+                grid-row: 1/3;
+                border-left: 1px solid #ccc;
+                padding-left: 24px
+            }
+
+                .smmnr .card-rank .card-content .champions > div {
+                    display: grid;
+                    grid-gap: 4px 10px;
+                    grid-template-columns: auto 1fr 1fr 1fr;
+                    align-items: center
+                }
+
+                    .smmnr .card-rank .card-content .champions > div:not(:last-child) {
+                        margin: 0 0 10px 0
+                    }
+
+                    .smmnr .card-rank .card-content .champions > div img {
+                        height: 36px;
+                        width: 36px;
+                        grid-row: 1/3;
+                        margin: auto;
+                        border-radius: 50%
+                    }
+
+                    .smmnr .card-rank .card-content .champions > div span {
+                        line-height: 16px;
+                        font-size: 13px
+                    }
+
+                .smmnr .card-rank .card-content .champions .empty-stats {
+                    height: 100%;
+                    text-align: center;
+                    grid-template-columns: 1fr
+                }
+
+                    .smmnr .card-rank .card-content .champions .empty-stats span {
+                        font-size: 1.2rem;
+                        line-height: inherit;
+                        font-weight: bolder;
+                        color: rgba(0,0,0,.25)
+                    }
+
+            .smmnr .card-rank .card-content .rank .mini-series span {
+                display: inline-block;
+                height: 18px;
+                width: 18px;
+                line-height: 18px;
+                font-size: 12px;
+                color: #fff;
+                cursor: default;
+                text-align: center
+            }
+
+                .smmnr .card-rank .card-content .rank .mini-series span:first-child {
+                    border-radius: 3px 0 0 3px
+                }
+
+                .smmnr .card-rank .card-content .rank .mini-series span:last-child {
+                    border-radius: 0 3px 3px 0
+                }
+
+        #spanUpdate {
+            font-size: 12px
+        }
+
+        .smmnr .rowfriends li {
+            min-height: unset
+        }
+
+        .summoner-card .summoner-icon {
+            border-top-left-radius: inherit;
+            width: 140px;
+            float: left
+        }
+
+        .summoner-card .card-content {
+            min-height: 140px;
+            padding: 12px;
+            display: grid;
+            grid-template-columns: minmax(0,1fr) max-content;
+            grid-template-rows: 1fr auto
+        }
+
+        .summoner-card .info > div {
+            display: grid;
+            grid-gap: 8px;
+            grid-template-columns: repeat(4,minmax(0,max-content));
+            grid-template-rows: 28px;
+            align-items: center;
+            margin-bottom: 4px
+        }
+
+        .summoner-card .info .summoner-name {
+            font-size: 1.7rem;
+            font-weight: 700;
+            line-height: 28px
+        }
+
+        .summoner-card .info .flag {
+            width: 24px;
+            border-radius: 3px
+        }
+
+        .summoner-card .info .role {
+            width: 30px;
+            border-radius: 50%;
+            padding: 3px
+        }
+
+        .summoner-card .badges {
+            grid-column: 1;
+            grid-row: 2
+        }
+
+            .summoner-card .badges .badge {
+                margin: 8px 8px 0 0;
+                cursor: pointer
+            }
+
+        .summoner-card .actions {
+            grid-row: 1/3;
+            display: grid;
+            grid-template-rows: auto 1fr 1fr;
+            align-items: center;
+            text-align: right
+        }
+
+        .summoner-card .rowtabs {
+            margin: 0;
+            border-bottom-left-radius: inherit;
+            border-bottom-right-radius: inherit
+        }
+
+            .summoner-card .rowtabs .tab.live > a {
+                color: #f44336 !important
+            }
+
+        @media only screen and (max-width:600px) {
+            .summoner-card .summoner-icon {
+                width: 80px
+            }
+
+            .summoner-card .card-content {
+                min-height: 80px;
+                padding: 4px 8px 0;
+                grid-template-rows: 84px auto
+            }
+
+            .summoner-card .info > div {
+                grid-template-rows: auto
+            }
+
+            .summoner-card .info .summoner-name {
+                font-size: 1.2rem;
+                line-height: 1.5rem
+            }
+
+            .summoner-card .info .flag {
+                width: 18px
+            }
+
+            .summoner-card .info .role {
+                width: 24px
+            }
+
+            .summoner-card .badges {
+                margin-left: -80px
+            }
+
+                .summoner-card .badges .badge {
+                    margin: 0 8px 8px 0
+                }
+        }
+
+        .chip.social {
+            cursor: pointer
+        }
+
+        .twitch {
+            color: #815fc0 !important
+        }
+
+        .youtube {
+            color: red !important
+        }
+
+        .facebook {
+            color: #3b5998 !important
+        }
+
+        .instagram {
+            background: #f09433;
+            background: -moz-linear-gradient(45deg,#f09433 0,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            background: -webkit-linear-gradient(45deg,#f09433 0,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            background: linear-gradient(45deg,#f09433 0,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent
+        }
+
+        .twitter {
+            color: #00aced !important
+        }
+
+        .chip.follow {
+            text-align: center;
+            transition: background .1s
+        }
+
+            .chip.follow.disabled span {
+                opacity: .5
+            }
+
+            .chip.follow:not(.f) span:not(.f) {
+                display: none
+            }
+
+            .chip.follow.f {
+                background-color: #ff9800;
+                color: #fff
+            }
+
+                .chip.follow.f:not(:hover) span:not(.af) {
+                    display: none
+                }
+
+                .chip.follow.f.just-followed:hover span:not(.af) {
+                    display: none
+                }
+
+                .chip.follow.f:not(.just-followed):hover {
+                    background-color: #f44336;
+                    color: #fff
+                }
+
+                    .chip.follow.f:not(.just-followed):hover span:not(.uf) {
+                        display: none
+                    }
+
+        @media only screen and (max-width:600px) {
+            .chip.social:not(.follow) {
+                margin-right: 16px
+            }
+
+                .chip.social:not(.follow) i {
+                    margin-right: 0
+                }
+
+                .chip.social:not(.follow) span {
+                    display: none
+                }
+        }
+
+        button, input, optgroup, select, textarea {
+            font-family: Montserrat
+        }
+
+        @media only screen and (max-width:600px) {
+            .row .col.s12 {
+                padding: 0
+            }
+        }
+
+        a {
+            color: #00bfa5
+        }
+
+        .flow-text {
+            font-weight: 300
+        }
+
+        .material-tooltip {
+            max-width: 300px
+        }
+
+            .material-tooltip .tooltip-content {
+                font-size: 13px
+            }
+
+        ul.collection {
+            overflow: initial;
+            border-radius: 12px
+        }
+
+            ul.collection > li:first-of-type {
+                border-top-left-radius: 12px;
+                border-top-right-radius: 12px
+            }
+
+            ul.collection > li:last-of-type {
+                border-bottom-left-radius: 12px;
+                border-bottom-right-radius: 12px
+            }
+
+        li > a > img {
+            height: inherit;
+            line-height: inherit;
+            float: left;
+            margin: 0 24px 0 0;
+            width: 24px
+        }
+
+        li.disabled {
+            pointer-events: none
+        }
+
+            li.disabled a {
+                pointer-events: none;
+                opacity: .5;
+                background-color: rgba(0,0,0,.2)
+            }
+
+        .lolsquare-nightmode li.disabled a {
+            background-color: rgba(255,255,255,.2)
+        }
+
+        .collapsible {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border: none
+        }
+
+            .collapsible.popout > li, .collapsible > li {
+                -webkit-box-shadow: none;
+                box-shadow: none
+            }
+
+            .collapsible li.active {
+                border-radius: 12px;
+                margin: 8px 0
+            }
+
+            .collapsible li .collapsible-header {
+                border: 1px solid rgba(0,0,0,.2);
+                border-top-width: 0
+            }
+
+            .collapsible li.active .collapsible-header, .collapsible li.active + li .collapsible-header, .collapsible li:first-of-type .collapsible-header {
+                border-top-width: 1px
+            }
+
+            .collapsible li:first-of-type .collapsible-header {
+                border-top-left-radius: 12px;
+                border-top-right-radius: 12px
+            }
+
+            .collapsible li:not(.active):last-of-type .collapsible-header {
+                border-bottom-left-radius: 12px;
+                border-bottom-right-radius: 12px
+            }
+
+            .collapsible li .collapsible-body {
+                background-color: #fff;
+                border: 1px solid rgba(0,0,0,.2);
+                border-top-width: 0
+            }
+
+            .collapsible li:last-of-type .collapsible-body {
+                border-bottom-left-radius: 12px;
+                border-bottom-right-radius: 12px
+            }
+
+        .lolsquare-nightmode .collapsible li .collapsible-body {
+            background-color: #303747;
+            border: 1px solid #000;
+            border-top: 0
+        }
+
+        .max-5-result .autocomplete-content.dropdown-content {
+            max-height: 300px;
+            overflow-y: hidden
+        }
+
+        ul.dropdown-content {
+            min-width: 200px;
+            z-index: 100
+        }
+
+        .dropdown-content li > a, .dropdown-content li > span {
+            color: rgba(0,0,0,.87)
+        }
+
+            .dropdown-content li > a > i, .dropdown-content li > a > img {
+                margin: 0 15px 0 0
+            }
+
+        .autocomplete-content img, .select-dropdown li img {
+            width: unset;
+            float: left !important
+        }
+
+        .lolsquare-nightmode .dropdown-content {
+            background-color: #000
+        }
+
+            .lolsquare-nightmode .dropdown-content li > a, .lolsquare-nightmode .dropdown-content li > span {
+                color: rgba(255,255,255,.87)
+            }
+
+            .lolsquare-nightmode .dropdown-content li.active, .lolsquare-nightmode .dropdown-content li:hover {
+                background-color: #212121
+            }
+
+        .btn-large:not(.btn-floating), .btn-small:not(.btn-floating), .btn:not(.btn-floating) {
+            box-shadow: none;
+            border: .5px solid rgba(0,0,0,.2)
+        }
+
+        .btn-flat:hover {
+            background: rgba(0,0,0,.17)
+        }
+
+        .lolsquare-nightmode .btn-flat {
+            color: rgba(255,255,255,.87)
+        }
+
+        .col-buttons .btn, .col-buttons .btn-flat, .col-buttons .btn-large {
+            float: right;
+            margin: 0 0 6px 3px
+        }
+
+        h5 .btn-flat.right, h5 .btn.right {
+            margin-top: -4px
+        }
+
+        .tabs .indicator {
+            background: #009688;
+            border-radius: 3px 3px 0 0;
+            height: 3px;
+            margin: 0 12px
+        }
+
+        .tabs .tab a {
+            color: #009688 !important;
+            font-size: 16px
+        }
+
+        @media only screen and (max-width:600px) {
+            .tabs .tab a {
+                font-size: 12px
+            }
+
+            .rowtabs .col {
+                padding: 0
+            }
+        }
+
+        .lolsquare-nightmode .tabs .indicator {
+            background: #26a69a
+        }
+
+        .lolsquare-nightmode .tabs .tab a {
+            color: #80cbc4 !important
+        }
+
+        .tabs .tab a:not(.active) {
+            opacity: .7
+        }
+
+        .tabs .tab a:focus, .tabs .tab a:focus.active {
+            background-color: rgba(255,255,255,0) !important
+        }
+
+        .tabs .tab.disabled a, .tabs .tab.disabled a:hover {
+            opacity: .4
+        }
+
+        .tabs::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+            border-radius: 10px;
+            background-color: #f5f5f5
+        }
+
+        .tabs::-webkit-scrollbar {
+            width: 3px;
+            height: 3px;
+            background-color: #f5f5f5
+        }
+
+        .tabs::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+            background-color: #555
+        }
+
+        .chip {
+            color: #424242;
+            background-color: #e0e0e0;
+            -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2);
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12),0 1px 5px 0 rgba(0,0,0,.2)
+        }
+
+        .lolsquare-nightmode .chip {
+            color: #bdbdbd;
+            background-color: #424242
+        }
+
+        .chip:focus {
+            background-color: #b2dfdb;
+            color: rgba(0,0,0,.8)
+        }
+
+        .chip i {
+            line-height: inherit
+        }
+
+            .chip i.left {
+                margin-right: 8px
+            }
+
+            .chip i.right {
+                margin-left: 8px
+            }
+
+            .chip i.fab {
+                font-size: 18px
+            }
+
+        .modal {
+            overscroll-behavior: contain;
+            border-radius: 12px
+        }
+
+            .modal.bottom-sheet {
+                max-height: 90%;
+                border-radius: 12px 12px 0 0
+            }
+
+            .modal .modal-footer {
+                height: auto;
+                padding: 4px 12px
+            }
+
+        .input-field a {
+            margin-top: 8px
+        }
+
+        .img-check img, .img-radio img {
+            width: 24px;
+            margin-right: 8px;
+            float: left
+        }
+
+        .pagination {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            display: table;
+            margin: auto;
+            border-radius: 4px;
+            width: auto
+        }
+
+            .pagination li {
+                overflow: hidden;
+                border-radius: 0
+            }
+
+                .pagination li:not(.disabled) {
+                    cursor: pointer
+                }
+
+                .pagination li.active {
+                    background-color: #ff9800 !important
+                }
+
+        .divider {
+            background-color: rgba(0,0,0,.1)
+        }
+
+        .sidenav .divider {
+            margin: 4px 0
+        }
+
+        .lolsquare-nightmode .divider {
+            background-color: rgba(255,255,255,.3)
+        }
+
+        .card {
+            border: 1px solid rgba(0,0,0,.2);
+            border-radius: 12px
+        }
+
+            .card.collection {
+                overflow: hidden
+            }
+
+            .card .card-content > .row:last-of-type {
+                margin-bottom: 0
+            }
+
+        .lolsquare-nightmode .card {
+            background-color: #303747
+        }
+
+        span.badge.new {
+            color: #424242;
+            background-color: #eee
+        }
+
+        .lolsquare-nightmode span.badge.new {
+            color: #bdbdbd;
+            background-color: #212121
+        }
+
+        .waves-effect {
+            cursor: pointer
+        }
+
+        .lolsquare-nightmode .waves-effect .waves-ripple {
+            background-color: rgba(255,255,255,.45)
+        }
+
+        .lolsquare-nightmode .waves-effect.waves-light .waves-ripple {
+            background: rgba(0,0,0,.2)
+        }
+
+        table {
+            border-radius: 12px
+        }
+
+            table tr:first-of-type {
+                border-top-left-radius: 12px;
+                border-top-right-radius: 12px
+            }
+
+            table tr:last-of-type {
+                border-bottom-left-radius: 12px;
+                border-bottom-right-radius: 12px
+            }
+
+        tr {
+            border-bottom: 1px solid rgba(0,0,0,.12)
+        }
+
+        .lolsquare-nightmode table.striped > tbody > tr:nth-child(odd) {
+            background-color: rgba(242,242,242,.1)
+        }
+
+        .pagination li a {
+            height: 30px
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app">
+        <div id="pageLogoSmall">
+            <img id="logo-2" class="logo" src="https://static.lolsquare.com/images/logo/logo.svg">
+        </div>
+        <div id="pageHome">
+            <div>
+                <h1 id="brand-name" class="bold"></h1>
+                <p id="brand-desc">The best team manager web app for<br>League of Legends.</p>
+            </div>
+        </div>
+        <div id="pageLogoLarge">
+            <img id="logo-1" class="logo" src="https://static.lolsquare.com/images/logo/logo.svg">
+        </div>
+        <div id="pageTeam">
+            <div>
+                <h1 class="bold">Create your team</h1>
+                <p>Our goal is to help you create and manage<br>your personal League of Legends team<br>in an easy and fun way</p>
+            </div>
+        </div>
+        <div id="pageTeamPreview">
+            <div class="tm">
+                <div id="rowTeamCard">
+                    <div class="card team-card white-text" style="background: radial-gradient(circle farthest-side at center bottom,#651FFF,#311B92 100%)">
+                        <div class="row nmb">
+                            <div class="col s12">
+                                <img class="teamlogo" style="" title="Darius's Mages icon" src="https://static.lolsquare.com/images/team_logos/1(20).png" alt="Darius's Mages icon"><span class="name truncate tag">DM513<img class="flagimg" src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/flags/4x3/kr.svg" title="South Korea" alt="South Korea flag"></span>
+                                <span class="name truncate">Darius's Mages</span><span id="btnTabTeamFollowers" class="new badge left" data-badge-caption="Followers">1</span>
+                            </div>
+                        </div>
+                        <div class="row nmb rowtabs">
+                            <div class="col s12">
+                                <ul class="tabs tabs-transparent">
+                                    <li class="tab col"><a class="waves-effect" href="#Home">Home</a></li>
+                                    <li class="tab col"><a class="waves-effect" href="#Matchlist">Matchlist</a></li>
+                                    <li class="tab col"><a class="waves-effect" href="#Statistics">Statistics</a></li>
+                                    <li class="tab col "><a class="waves-effect" href="#Settings">Settings</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Home" class="row">
+                    <div class="col s4">
+                        <div class="card teamcard deep-purple" style="background-image: radial-gradient(circle farthest-side at center bottom,#651FFF,#311B92 100%);">
+                            <div class="card-content white-text">
+                                <div><img class="right flagimg" src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/flags/4x3/kr.svg" title="South Korea" alt="South Korea flag"> <a class="link" style="color: rgba(255,255,255,0.85);"><span class="card-title" style="line-height: 28px;">DM513</span><span>Darius's Mages</span></a></div>
+                                <div class="center right"><a><img class="iconimg" style="" title="View Darius's Mages" src="https://static.lolsquare.com/images/team_logos/1(20).png" alt="Darius's Mages icon"></a></div>
+                                <a class="btn-floating halfway-fab waves-effect white-text deep-purple accent-3"><i class="far fa-pen" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s8">
+                        <div class="card card-recap">
+                            <div class="card-content">
+
+                                <div class="rank">
+                                    <img src="https://static.lolsquare.com/images/emblems/silver.png">
+                                    <span class="truncate">Silver III</span>
+                                    <span class="truncate">20 games played</span>
+                                    <span class="truncate">10 win 10 loss</span>
+                                    <span class="truncate">50% win rate</span>
+                                </div>
+                                <div class="vertical-divider"></div>
+                                <div class="champions">
+                                    <label class="truncate center">Top played champions per role</label>
+                                    <div>
+                                        <div>
+                                            <img src="https://ddragon.leagueoflegends.com/cdn/9.19.1/img/champion/Malphite.png">
+                                            <img src="https://static.lolsquare.com/images/role/top.png">
+                                        </div>
+                                        <span class="truncate">Malphite</span>
+                                        <span class="truncate green-text text-darken-3">2.89 kda</span>
+                                        <span class="truncate green-text text-darken-3">60% wr</span>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <img src="https://ddragon.leagueoflegends.com/cdn/9.19.1/img/champion/Kayn.png">
+                                            <img src="https://static.lolsquare.com/images/role/jungle.png">
+                                        </div>
+                                        <span class="truncate">Kayn</span>
+                                        <span class="truncate green-text">1.90 kda</span>
+                                        <span class="truncate red-text">41% wr</span>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <img src="https://ddragon.leagueoflegends.com/cdn/9.19.1/img/champion/Zoe.png">
+                                            <img src="https://static.lolsquare.com/images/role/mid.png">
+                                        </div>
+                                        <span class="truncate">Zoe</span>
+                                        <span class="truncate green-text">2.16 kda</span>
+                                        <span class="truncate green-text text-darken-3">60% wr</span>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <img src="https://ddragon.leagueoflegends.com/cdn/9.19.1/img/champion/Ezreal.png">
+                                            <img src="https://static.lolsquare.com/images/role/adc.png">
+                                        </div>
+                                        <span class="truncate">Ezreal</span>
+                                        <span class="truncate amber-text">5.50 kda</span>
+                                        <span class="truncate green-text">80% wr</span>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <img src="https://ddragon.leagueoflegends.com/cdn/9.19.1/img/champion/Nami.png">
+                                            <img src="https://static.lolsquare.com/images/role/support.png">
+                                        </div>
+                                        <span class="truncate">Nami</span>
+                                        <span class="truncate green-text">3.41 kda</span>
+                                        <span class="truncate">50% wr</span>
+                                    </div>
+                                </div>
+
+                                <div class="players">
+                                    <div class="title-divider">
+                                        <div class="divider"></div>
+                                        <label class="truncate center">Top players</label>
+                                        <div class="divider"></div>
+                                    </div>
+                                    <div class="player">
+                                        <img class="role" src="https://static.lolsquare.com/images/role/jungle.png">
+                                        <img class="icon" src="https://ddragon.leagueoflegends.com/cdn/9.19.1/img/profileicon/1114.png">
+                                        <img class="flag" src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/flags/4x3/it.svg">
+                                        <span class="name truncate">qtFragola</span>
+                                        <img class="rank" src="https://static.lolsquare.com/images/emblems/master.png">
+                                        <span class="rank-desc truncate">Master</span>
+                                        <span class="stats truncate">15 games</span>
+                                        <span class="stats truncate green-text">87% wr</span>
+                                        <span class="stats truncate green-text">4.15 kda</span>
+                                    </div>
+                                    <div class="player">
+                                        <img class="role" src="https://static.lolsquare.com/images/role/adc.png">
+                                        <img class="icon" src="https://ddragon.leagueoflegends.com/cdn/9.19.1/img/profileicon/3150.png">
+                                        <img class="flag" src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/flags/4x3/it.svg">
+                                        <span class="name truncate">EndlessBlueSky</span>
+                                        <img class="rank" src="https://static.lolsquare.com/images/emblems/gold.png">
+                                        <span class="rank-desc truncate">Gold II</span>
+                                        <span class="stats truncate">20 games</span>
+                                        <span class="stats truncate green-text text-darken-3">60% wr</span>
+                                        <span class="stats truncate green-text">3.21 kda</span>
+                                    </div>
+                                    <div class="player">
+                                        <img class="role" src="https://static.lolsquare.com/images/role/support.png">
+                                        <img class="icon" src="https://ddragon.leagueoflegends.com/cdn/9.19.1/img/profileicon/4363.png">
+                                        <img class="flag" src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/flags/4x3/it.svg">
+                                        <span class="name truncate">Campanula</span>
+                                        <img class="rank" src="https://static.lolsquare.com/images/emblems/gold.png">
+                                        <span class="rank-desc truncate">Gold IV</span>
+                                        <span class="stats truncate">20 games</span>
+                                        <span class="stats truncate green-text text-darken-3">60% wr</span>
+                                        <span class="stats truncate green-text text-darken-3">2.47 kda</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="pageSocial">
+            <div>
+                <h1 class="bold">Social</h1>
+                <p>Invite your friends or find new ones!<br>We provide member search and team search systems<br>that will allow you to form a group of any level</p>
+            </div>
+        </div>
+        <div>
+            <img id="imgSocial" src="https://static.lolsquare.com/images/landing-page/champions.png">
+        </div>
+        <div id="pageProfile">
+            <div>
+                <h1 class="bold">Personal profile</h1>
+                <p>From the most accurate statistics to the live game tool<br>LoLSquare offers a summoner profile of high quality and reliability<br>to which you can add links to your social networks to increase your visibility</p>
+            </div>
+        </div>
+        <div id="pageProfilePreview">
+            <div class="maincontent smmnr">
+                <div class="row nmb social-links">
+                    <a class="chip social hoverable-light waves-effect"><i class="left twitch fab fa-twitch" aria-hidden="true"></i><span class="twitch">Twitch</span></a>
+                    <a class="chip social hoverable-light waves-effect"><i class="left youtube fab fa-youtube" aria-hidden="true"></i><span class="youtube">YouTube</span></a>
+                    <a title="Copy the link to this summoner" class="chip social waves-effect hoverable-light"><i class="far fa-link left" aria-hidden="true"></i>Share</a>
+                    <a title="Social links management" class="chip right hoverable-light waves-effect"><i class="far fa-user-cog left" aria-hidden="true"></i>Settings</a>
+                </div>
+                <div id="rowSummInfo">
+                    <div class="card summoner-card">
+                        <img class="summoner-icon" style="" title="EndlessBlueSky icon" src="https://ddragon.leagueoflegends.com/cdn/9.19.1/img/profileicon/3221.png" alt="EndlessBlueSky icon">
+                        <div class="card-content">
+                            <div class="info">
+                                <div>
+                                    <img class="flag" src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/flags/4x3/it.svg" title="Italy" alt="Italy flag">
+                                    <span class="summoner-name truncate">qtFragola</span>
+                                    <img class="role grey lighten-3" src="https://static.lolsquare.com/images/role/jungle.png" alt="Jungle icon" title="Jungle">
+                                    <img class="role grey lighten-3" src="https://static.lolsquare.com/images/role/support.png" alt="Support icon" title="Support">
+                                </div>
+                                <label class="truncate">Registration in July 2019</label>
+                                <label class="truncate">Last activity 5 days ago</label>
+                                <label class="truncate summoner-level">Level 183</label>
+                            </div>
+                            <div class="badges">
+                                <span id="btnTabSummonerFollowers" class="new badge left" data-badge-caption="Followers">487</span>
+                                <span id="btnTabSummonerFollowing" class="new badge left" data-badge-caption="Following">142</span>
+                            </div>
+                            <div class="actions hide-on-small-only">
+                                <label class="labelUpdate">Last update: 5 days ago</label>
+                                <a class="btnUpdate btn waves-effect"><i class="far fa-sync left" aria-hidden="true"></i><span>UPDATE</span><div class="progress dnone"><div class="indeterminate"></div></div></a>
+                                <a class="btnInvite btn waves-effect dnone">Invite</a>
+                            </div>
+                        </div>
+                        <div class="row rowtabs grey lighten-3">
+                            <div class="col s12">
+                                <ul class="tabs transparent">
+                                    <li id="summonerTabHome" class="tab col"><a class="waves-effect" href="#Home">Home</a></li>
+                                    <li id="summonerTabMatchlist" class="tab col"><a class="waves-effect" href="#Matchlist">Matchlist</a></li>
+                                    <li id="summonerTabStats" class="tab col"><a class="waves-effect" href="#Statistics">Statistics</a></li>
+                                    <li id="summonerTabLiveGame" class="tab col">
+                                        <a class="waves-effect" style="color: #f44336!important;" href="#LiveGame">Live Game</a>
+                                        <div class="circle red pulse" style="height: 6px;width: 6px;margin-right: 14px;margin-top: -38px;float: right;z-index: 2;"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Home" style="display: block;" class="active">
+                    <div class="row rowranks">
+                        <div class="col s12">
+                            <h5>Ranked Solo</h5>
+                        </div>
+                        <div class="col s12">
+                            <div id="card-rank-420" class="card card-rank">
+                                <div class="card-content">
+                                    <div class="rank">
+                                        <img class="" style="" src="https://static.lolsquare.com/images/emblems/master.png" alt="Master icon" title="Master - 54 LP"><span class="truncate">Master </span><span class="truncate">54LP</span><span class="truncate">272 games played</span>
+                                        <span class="truncate">140 win 132 loss</span><span class="truncate">51% win rate</span>
+                                    </div>
+                                    <div class="champions">
+                                        <div>
+                                            <img class="" src="https://ddragon.leagueoflegends.com/cdn/9.19.1/img/champion/Pantheon.png" alt="Pantheon icon" title="Pantheon"><span class="truncate">Pantheon</span><span class="truncate center green-text text-darken-3">2.56</span>
+                                            <span class="truncate center ">46%</span><span class="truncate">167 Games played</span><span class="truncate center">6 / 5.7 / 8.6</span><span class="truncate center">77 win 90 loss</span>
+                                        </div>
+                                        <div>
+                                            <img class="" src="https://ddragon.leagueoflegends.com/cdn/9.19.1/img/champion/JarvanIV.png" alt="Jarvan IV icon" title="Jarvan IV"><span class="truncate">Jarvan IV</span><span class="truncate center green-text">3.36</span><span class="truncate center ">50%</span>
+                                            <span class="truncate">26 Games played</span><span class="truncate center">6.3 / 5.9 / 13.6</span><span class="truncate center">13 win 13 loss</span>
+                                        </div>
+                                        <div>
+                                            <img class="" src="https://ddragon.leagueoflegends.com/cdn/9.19.1/img/champion/XinZhao.png" alt="Xin Zhao icon" title="Xin Zhao"><span class="truncate">Xin Zhao</span><span class="truncate center green-text">3.02</span><span class="truncate center green-text text-darken-3">67%</span>
+                                            <span class="truncate">18 Games played</span><span class="truncate center">8.2 / 5 / 6.8</span><span class="truncate center">12 win 6 loss</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="pageJoin" style="grid-auto-flow: column;">
+            <img class="hero jinx" src="https://static.lolsquare.com/images/landing-page/jinx.png">
+            <div class="center">
+                <h1 class="bold">Don't miss out!</h1>
+                <p>Join the growing base of LoLSquare</p>
+                <a href="https://lolsquare.com" class="btn-large orange pulse" style="font-size: 1.2rem;letter-spacing: 1px;line-height: 64px;height: 64px;padding: 0 32px;">Join</a>
+                <img style="height: 30vh;display: block;margin: 4vh auto 0;" src="https://static.lolsquare.com/images/landing-page/lux.gif">
+            </div>
+            <img class="hero yasuo" src="https://static.lolsquare.com/images/landing-page/yasuo.png">
+        </div>
+    </div>
+    <div class="header">
+        <div class="fill"></div>
+        <img href="https://lolsquare.com" src="https://static.lolsquare.com/images/logo/logo.svg">
+        <a class="ls-link" href="https://lolsquare.com">LoLSquare.com</a>
+        <a href="https://lolsquare.com" class="btn-large waves-effect">Join</a>
+    </div>
+    <div class="scrollbar">
+        <div id="btnNav1" class="point-navigate on" onclick="scrollToPage('pageHome')">Home</div>
+        <div id="btnNav2" class="point-navigate" onclick="scrollToPage('pageTeam')">Team</div>
+        <div id="btnNav3" class="point-navigate" onclick="scrollToPage('pageSocial')">Social</div>
+        <div id="btnNav4" class="point-navigate" onclick="scrollToPage('pageProfile')">Profile</div>
+        <div id="btnNav5" class="point-navigate" onclick="scrollToPage('pageJoin')">Join</div>
+        <div class="progress orange accent-1">
+            <div class="determinate orange"></div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            //history.pushState({ id: "LandingPage" }, 'Landing page', "https://static.lolsquare.com/LandingPage");
+            // Animated brand name
+            var BrandName = "LoLSquare".split("");
+            for (var i in BrandName) LandingPageAppendLetter(BrandName[i], i * 80);
+            // Btn navigate
+            LandingPagePositionBtnPage(0);
+            // Bind scroll event
+            $(window).bind("mousewheel.LandingPage", LandingPageScrollEvent);
+            // On resize
+            $(window).on('resize', function () { LandingPageScrollFunction(LandingPageScrollCount); });
+        });
+
+        /* Scroll */
+        var LandingPageScrollCount = 0;
+        function LandingPageScrollEvent(e) {
+            if (window.innerWidth < 980) return;
+
+            if (e.originalEvent) e = e.originalEvent;
+            LandingPageScrollFunction(LandingPageScrollCount + e.deltaY * 1.2);
+        }
+        function LandingPageScrollFunction(iLeftScroll) {
+            // Calculate max scroll right
+            var LandingPageScrollMax = Math.floor($(".app").outerWidth(true) - $(window).outerWidth(true));
+            //
+            LandingPageScrollCount = iLeftScroll;
+            if (LandingPageScrollCount > LandingPageScrollMax)
+                LandingPageScrollCount = LandingPageScrollMax;
+            if (LandingPageScrollCount < 0) LandingPageScrollCount = 0;
+            // Scroll horizontally
+            $(".app").css("transform", "translateX(" + LandingPageScrollCount * -1 + "px)");
+            // Logo transformation
+            logoTransformOnScroll(LandingPageScrollCount);
+            // Scrollbar
+            $(".scrollbar .determinate").css("width", LandingPageScrollCount * 100 / LandingPageScrollMax + "%");
+            // Btn navigate
+            LandingPagePositionBtnPage(LandingPageScrollCount);
+            // Jinx & yasuo
+            if (LandingPageScrollCount + (document.documentElement.clientWidth / 100 * 25) > LandingPageScrollMax)
+                $(".hero").addClass("appear");
+            if (LandingPageScrollCount < LandingPageScrollMax - (document.documentElement.clientWidth / 100 * 80))
+                $(".hero").removeClass("appear");
+        }
+        function logoTransformOnScroll(LandingPageScrollCount) {
+            var rotation = LandingPageScrollCount * 0.045 * -1;
+            var scale = LandingPageScrollCount * 0.0015 + 1;
+            var translateX = LandingPageScrollCount * -0.25;
+
+            if (rotation > 0) rotation = 0;
+            if (rotation < -45) rotation = -45;
+            if (scale > 2.5) scale = 2.5;
+
+            $("#logo-1").css("transform", "translateX(" + translateX + "px) rotate(" + rotation + "deg) scale(" + scale + ", " + scale + ")");
+        }
+        /*  */
+        function LandingPageAppendLetter(letter, ms) {
+            $("#brand-name").append('<span style="animation-delay: ' + ms + 'ms !important">' + letter + "</span>");
+        }
+        function LandingPageAppendLetterDesc(letter, i) {
+            if (letter == "*")
+                setTimeout(function (letter) { $("#brand-desc").append("<br>"); }, i, letter);
+            else
+                setTimeout(function (letter) { $("#brand-desc").append(letter); }, i, letter);
+        }
+        /* */
+        function LandingPagePositionBtnPage(LandingPageScrollCount) {
+            var LandingPageScrollMax = Math.floor($(".app").outerWidth(true) - $(window).outerWidth(true));
+            var pagePadding = document.documentElement.clientWidth / 100 * 5;
+            var scrollbarWidth = $(".scrollbar").width();
+
+            var perc = ($("#pageTeam").position().left - pagePadding) * 100 / LandingPageScrollMax;
+            $("#btnNav2").css("margin-left", (perc * scrollbarWidth / 100) + "px");
+            if (LandingPageScrollCount >= ($("#pageTeam").position().left - pagePadding))
+                $("#btnNav2").addClass("on");
+            else
+                $("#btnNav2").removeClass("on");
+
+            perc = ($("#pageSocial").position().left - pagePadding) * 100 / LandingPageScrollMax;
+            $("#btnNav3").css("margin-left", (perc * scrollbarWidth / 100) + "px");
+            if (LandingPageScrollCount >= ($("#pageSocial").position().left - pagePadding))
+                $("#btnNav3").addClass("on");
+            else
+                $("#btnNav3").removeClass("on");
+
+            perc = ($("#pageProfile").position().left - pagePadding) * 100 / LandingPageScrollMax;
+            $("#btnNav4").css("margin-left", (perc * scrollbarWidth / 100) + "px");
+            if (LandingPageScrollCount >= ($("#pageProfile").position().left - pagePadding))
+                $("#btnNav4").addClass("on");
+            else
+                $("#btnNav4").removeClass("on");
+
+            $("#btnNav5").css("margin-left", scrollbarWidth + "px");
+            if (LandingPageScrollCount >= LandingPageScrollMax)
+                $("#btnNav5").addClass("on");
+            else
+                $("#btnNav5").removeClass("on");
+        }
+        function scrollToPage(id) {
+            var vwPagePadding = 0;
+
+            if (id == "pageHome")
+                vwPagePadding = 8;
+            else if (id == "pageJoin")
+                vwPagePadding = 0;
+            else
+                vwPagePadding = 5;
+
+            var pxElLeft = $("#" + id).position().left;
+            var pxPagePadding = document.documentElement.clientWidth / 100 * vwPagePadding;
+
+            LandingPageScrollFunction(pxElLeft - pxPagePadding);
+        }
+    </script>
+</body>
+</html>

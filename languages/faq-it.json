@@ -1,0 +1,18 @@
+{
+    "1": {
+        "title": "Ho una domanda, a chi posso chiedere?",
+        "html": "<div class=\"row\"><div class=\"col s12\"><p>Usa la voce di menù \"Lascia un feedback\" per farci domande.<br />Aggiorneremo la sezione FAQ con le domande più popolari.</p></div></div>"
+    },
+    "2": {
+        "title": "Come cambio la password?",
+        "html": "<div class=\"row\"><div class=\"col s12\"><p>Per cambiare la password devi semplicemente disconnetterti e registrare di nuovo il tuo evocatore con la nuova password.<br />Tutte le tue informazioni (squadre, partite giocate, ecc.) Saranno mantenute al sicuro e non andranno perse.</p></div></div>"
+    },
+    "3": {
+        "title": "Segnala testo",
+        "html": "<div class=\"row\"><div class=\"col s12\"><p>I testi contrassegnati come inappropriati verranno inoltrati ai nostri moderatori. Una volta esaminati, se dimostrano di infrangere le nostre linee guida e i nostri valori, questi testi verranno bloccati.</p></div></div>"
+    },
+    "4": {
+        "title": "Come posso creare un torneo?",
+        "html": "<div class=\"row\"><div class=\"col s12\"><p>Per creare un torneo ti basterà contattarci tramite uno dei seguenti social network:</p><ul class=\"browser-default\"><li><a href=\"https://www.instagram.com/euwlolsquare\" target=\"_blank\" rel=\"noopener\">https://www.instagram.com/euwlolsquare</a></li><li><a href=\"https://www.facebook.com/Euwlolsquare\" target=\"_blank\" rel=\"noopener\">https://www.facebook.com/Euwlolsquare</a></li></ul></div></div>"
+    }
+}
