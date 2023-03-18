@@ -10032,25 +10032,26 @@ var $main;
 var $mainContent;
 $(function() {
   AppLanguage = AppLanguageEN;
-  if (isLocalhost()) {
-      sApiUrl = "https://localhost:44343";
-      urlLoLSquareCDN = "/AppWebStatic";
-  } else {
-      if (!includes(getSubDomain().toUpperCase(), regionsColl))
-          changeRegion('EUW');
-  }
-  $.ajax({
-      url: sApiUrl,
-      type: "HEAD",
-      timeout: 5000,
-      cache: false,
-      success: function() {
-          callUpdateTemplates();
-      },
-      error: function() {
-          facadeChange("blue-grey", "Server under maintenance");
-      }
-  });
+  // if (isLocalhost()) {
+  //     sApiUrl = "https://localhost:44343";
+  //     urlLoLSquareCDN = "/AppWebStatic";
+  // } else {
+  //     if (!includes(getSubDomain().toUpperCase(), regionsColl))
+  //         changeRegion('EUW');
+  // }
+  // $.ajax({
+  //     url: sApiUrl,
+  //     type: "HEAD",
+  //     timeout: 5000,
+  //     cache: false,
+  //     success: function() {
+  //         callUpdateTemplates();
+  //     },
+  //     error: function() {
+  //         facadeChange("blue-grey", "Server under maintenance");
+  //     }
+  // });
+  callGetLanguagePack();
 });
 
 function callUpdateTemplates() {
