@@ -2,7 +2,7 @@
 $(function () {
     $.ajax({
         dataType: "text",
-        url: window.location.href + 'version.txt',
+        url: 'https://michelelucini.github.io/lolsquare/version.txt', // window.location.href
         cache: false,
         success: function (data) {
             // Bundle css - <link rel="stylesheet" href="lolsquare.css" />
